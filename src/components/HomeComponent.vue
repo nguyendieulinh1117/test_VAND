@@ -11,6 +11,7 @@ import FormFilter from './FormFilter.vue';
 const isShow = ref<Boolean>(false);
 const loading = ref(true);
 const loadingType = ref(true);
+const loadingView = ref(false);
 const pokemonData = ref<PokemonType[]>([]);
 const pokemonType = ref<CategoryType[]>([]);
 const pokemonDetail = ref<PokemonType>();
@@ -56,6 +57,7 @@ const getDetail = async (id: string) => {
     console.log(error);
   } finally {
     isShow.value = true;
+    loadingView.value = false;
   }
 };
 
@@ -85,6 +87,7 @@ const handleRefresh = () => {
 };
 
 const handleView = (id: string) => {
+  loadingView.value = true;
   getDetail(id);
   getSprite(id);
 };
@@ -129,6 +132,9 @@ watch(loading, getData, { immediate: true });
       </select>
     </div>
     <div v-if="loading || loadingType" class="wrapper-loader">
+      <div class="loader"></div>
+    </div>
+    <div v-if="loadingView" class="wrapper-loader">
       <div class="loader"></div>
     </div>
     <div v-if="!loading && !loadingType" class="wrapper-card">
