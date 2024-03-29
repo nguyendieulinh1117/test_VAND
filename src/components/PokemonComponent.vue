@@ -1,15 +1,16 @@
 <script setup lang="ts">
-import type { PokemonType, CategoryType } from '../types'
-import { renderStyleType, renderType } from '../utils'
+import type { PokemonType, CategoryType } from '../types';
+import { renderStyleType, renderType } from '../utils';
 defineProps<{
-  pokemon: PokemonType
-  handleView: (id: string) => void
-  pokemonType: CategoryType[]
-}>()
+  pokemon: PokemonType;
+  handleView: (id: string) => void;
+  pokemonType: CategoryType[];
+}>();
 </script>
 
 <template>
   <h3>{{ pokemon.name }}</h3>
+  <p>Number: {{ pokemon.number }}</p>
   <p class="type">
     Type:
     <strong

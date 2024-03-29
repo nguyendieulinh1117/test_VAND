@@ -10,6 +10,7 @@
   padding: 0 15px;
   margin: 0 auto;
 }
+
 .grid-2-cols {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -86,6 +87,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .wrapper-loader .loader {
   width: 48px;
   height: 48px;
@@ -106,53 +108,6 @@
   }
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal.open {
-  display: block;
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 600px;
-  position: relative;
-}
-
-/* The Close Button */
-.close {
-  color: #aaa;
-  position: absolute;
-  font-size: 28px;
-  font-weight: bold;
-  background-color: transparent;
-  border: none;
-  top: 10px;
-  right: 10px;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
 .tools {
   display: flex;
   justify-content: flex-end;
@@ -164,9 +119,13 @@
     gap: 10px;
   }
 }
-.tools .filterForm {
-  width: 100%;
+
+.tools select {
+  border-radius: 0;
+  border: 1px solid #000;
+  padding: 5px;
 }
+
 .tools button {
   cursor: pointer;
   background-color: #222;
@@ -196,13 +155,22 @@
     padding: 8px 12px 8px;
   }
 }
+
+.tools button.filter {
+  background-color: orange;
+  width: 100%;
+  max-width: max-content;
+}
+
 .type {
   .red {
     color: red;
   }
+
   .blue {
     color: blue;
   }
+
   .green {
     color: green;
   }
@@ -218,41 +186,53 @@
     background-color: #000;
     padding: 0 5px;
   }
+
   .ice {
     color: cadetblue;
   }
+
   .poison {
     color: purple;
   }
+
   .ground {
     color: brown;
   }
+
   .fly {
     color: darkseagreen;
   }
+
   .psychic {
     color: darkslategrey;
   }
+
   .bug {
     color: cyan;
   }
+
   .rock {
     color: darkgoldenrod;
   }
+
   .ghost {
     color: ghostwhite;
     background: #000;
     padding: 0 5px;
   }
+
   .dark {
     color: black;
   }
+
   .dragon {
     color: deeppink;
   }
+
   .steel {
     color: gray;
   }
+
   .fairy {
     color: palevioletred;
   }
@@ -278,41 +258,4 @@
 
 .info .total {
   color: red;
-}
-
-.pagination {
-  padding-top: 50px;
-  ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    gap: 8px;
-    justify-content: flex-end;
-    @media screen and (max-width: 767px) {
-      justify-content: center;
-      gap: 0;
-    }
-  }
-
-  li {
-    margin: 0 5px;
-  }
-
-  button {
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    @media screen and (max-width: 767px) {
-      padding: 5px 7px;
-    }
-  }
-
-  button.active {
-    background-color: #222;
-    color: white;
-    border-color: #222;
-  }
-  button.disabled {
-    cursor: not-allowed;
-  }
 }

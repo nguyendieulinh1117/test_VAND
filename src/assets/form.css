@@ -1,0 +1,60 @@
+.filterForm {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.filterForm .wrapper-btn {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: flex-end;
+}
+
+.filterForm .group-input {
+  width: calc(25% - 12px);
+
+  @media screen and (max-width: 800px) {
+    width: calc(32% - 8px);
+  }
+
+  @media screen and (max-width: 600px) {
+    width: calc(50% - 8px);
+  }
+}
+
+.filterForm .group-input label {
+  font-weight: bold;
+}
+
+.filterForm .group-input input {
+  width: 60px;
+  border: 1px solid #000;
+  padding: 2px 8px;
+}
+
+.filterForm .group-input input.error {
+  border-color: red;
+  background-color: cornsilk;
+}
+
+.filterForm .group-input p {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+  @media screen and (max-width: 390px) {
+    flex-direction: column;
+  }
+}
+
+.filterForm .errors {
+  color: red;
+  border: 1px solid red;
+  background-color: cornsilk;
+  border-radius: 4px;
+  padding: 8px 16px 8px 30px;
+  margin: 16px 0;
+  width: 100%;
+}

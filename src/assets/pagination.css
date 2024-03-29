@@ -1,0 +1,37 @@
+.pagination {
+  padding-top: 50px;
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    @media screen and (max-width: 767px) {
+      justify-content: center;
+      gap: 0;
+    }
+  }
+
+  li {
+    margin: 0 5px;
+  }
+
+  button {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    @media screen and (max-width: 767px) {
+      padding: 5px 7px;
+    }
+  }
+
+  button.active {
+    background-color: #222;
+    color: white;
+    border-color: #222;
+  }
+
+  button.disabled {
+    cursor: not-allowed;
+  }
+}

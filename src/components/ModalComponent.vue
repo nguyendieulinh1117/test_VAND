@@ -1,15 +1,14 @@
 <script setup lang="ts">
-import type { CategoryType, PokemonType } from '@/types'
-import { renderStyleType, renderType } from '@/utils'
-import { computed } from 'vue'
+import type { CategoryType, PokemonType } from '@/types';
+import { renderStyleType, renderType } from '@/utils';
 
-const props = defineProps<{
-  show: Boolean
-  handleClose: () => void
-  pokemonSprite: string
-  pokemonDetail?: PokemonType
-  pokemonType: CategoryType[]
-}>()
+defineProps<{
+  show: Boolean;
+  handleClose: () => void;
+  pokemonSprite?: string;
+  pokemonDetail?: PokemonType;
+  pokemonType: CategoryType[];
+}>();
 </script>
 
 <template>
@@ -19,8 +18,9 @@ const props = defineProps<{
       <div v-if="pokemonDetail">
         <h2>{{ pokemonDetail.name }}</h2>
         <div class="info">
-          <img :src="pokemonSprite" alt="" />
+          <img v-if="pokemonSprite" :src="pokemonSprite" :alt="pokemonDetail.name" />
           <div class="attribute">
+            <p>Number: {{ pokemonDetail.number }}</p>
             <p class="type">
               Type:
               <strong
@@ -51,3 +51,6 @@ const props = defineProps<{
     </div>
   </div>
 </template>
+<style>
+@import '../assets/modal.css';
+</style>
